@@ -1,0 +1,205 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\database\\get_low_stock_products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|solutionrelative:database\\get_low_stock_products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\database\\get_products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|solutionrelative:database\\get_products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\database\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|solutionrelative:database\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\database\\get_departments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|solutionrelative:database\\get_departments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ED19F12-ED44-4F5D-AFE8-688E27F12E73}|Models\\Models.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ED19F12-ED44-4F5D-AFE8-688E27F12E73}|Models\\Models.csproj|solutionrelative:models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T20:30:56.406Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Window2.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Window2.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Window2.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T21:12:05.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Window3.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Window3.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml",
+              "RelativeToolTip": "WpfApp1\\Window3.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T21:09:00.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Window3.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Window3.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Window3.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T21:05:18.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Window2.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Window2.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml",
+              "RelativeToolTip": "WpfApp1\\Window2.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-09T21:05:26.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAQwKkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:37:32.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Get_Products.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Products.cs",
+              "RelativeDocumentMoniker": "Database\\Get_Products.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Products.cs",
+              "RelativeToolTip": "Database\\Get_Products.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:37:09.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Get_Low_Stock_Products.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Low_Stock_Products.cs",
+              "RelativeDocumentMoniker": "Database\\Get_Low_Stock_Products.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Low_Stock_Products.cs",
+              "RelativeToolTip": "Database\\Get_Low_Stock_Products.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:35:35.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Search.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Search.cs",
+              "RelativeDocumentMoniker": "Database\\Search.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Search.cs",
+              "RelativeToolTip": "Database\\Search.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:32:38.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Producto.cs",
+              "RelativeDocumentMoniker": "Models\\Producto.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Producto.cs",
+              "RelativeToolTip": "Models\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:31:33.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Get_Departments.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Departments.cs",
+              "RelativeDocumentMoniker": "Database\\Get_Departments.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\Get_Departments.cs",
+              "RelativeToolTip": "Database\\Get_Departments.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T20:31:09.783Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
