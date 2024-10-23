@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfApp1.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApp1"
+        Title="Buscar Producto" Height="450" Width="800">
+
+    <!-- Add the Window.Resources section here -->
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Search Box -->
+            <RowDefinition Height="Auto"/>
+            <!-- Message Label -->
+            <RowDefinition Height="*"/>
+            <!-- DataGrid -->
+        </Grid.RowDefinitions>
+
+        <!-- Search TextBox -->
+        <TextBox Name="txtSearch" Grid.Row="0" Height="30" FontSize="16"
+                 VerticalAlignment="Top" TextChanged="txtSearch_TextChanged">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                    <TextBlock Text="Buscar Producto..." 
+                                               IsHitTestVisible="False" 
+                                               Foreground="Gray"
+                                               Margin="5,0,0,0"
+                                               VerticalAlignment="Center"
+                                               Visibility="{Binding Text.IsEmpty, 
+                                               RelativeSource={RelativeSource TemplatedParent}, 
+                                               Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <!-- Message Label -->
+        <Label Name="lblMessage" Grid.Row="1" Height="30" FontSize="14"
+               Foreground="Red" Visibility="Collapsed"/>
+
+        <!-- DataGrid -->
+        <DataGrid Name="dGProd_Search" Grid.Row="2" AutoGenerateColumns="False" Margin="0,10,0,0"
+                  MouseDoubleClick="dGProd_Search_MouseDoubleClick" ItemsSource="{Binding Productos}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="Auto"/>
+                <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}" Width="Auto"/>
+                <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="Auto"/>
+                <DataGridTemplateColumn Header="Acción" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Agregar" Click="Agregar_Click" DataContext="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
+
+

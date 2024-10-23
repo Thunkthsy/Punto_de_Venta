@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7ED19F12-ED44-4F5D-AFE8-688E27F12E73}|Models\\Models.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ED19F12-ED44-4F5D-AFE8-688E27F12E73}|Models\\Models.csproj|solutionrelative:models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\database\\productmagager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7842BEE1-6C77-4A11-A7D4-B5BCB57512C0}|Database\\Database.csproj|solutionrelative:database\\productmagager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|c:\\users\\ricar\\desktop\\p_venta\\punto_de_venta\\wpfapp1\\window2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73CF2F78-A452-4941-BB91-F696DA34B555}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\window2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Window2.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Window2.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml",
+              "RelativeToolTip": "WpfApp1\\Window2.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-23T01:30:57.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Window3.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Window3.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Window3.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T00:57:39.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductMagager.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\ProductMagager.cs",
+              "RelativeDocumentMoniker": "Database\\ProductMagager.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Database\\ProductMagager.cs",
+              "RelativeToolTip": "Database\\ProductMagager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T00:50:33.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-23T00:47:49.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Window3.xaml",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Window3.xaml",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window3.xaml",
+              "RelativeToolTip": "WpfApp1\\Window3.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-23T01:31:01.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Ticket.cs",
+              "RelativeToolTip": "Models\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T15:09:53.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwCEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T00:50:00.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Window2.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Window2.xaml.cs",
+              "ToolTip": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\WpfApp1\\Window2.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Window2.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T01:07:48.844Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

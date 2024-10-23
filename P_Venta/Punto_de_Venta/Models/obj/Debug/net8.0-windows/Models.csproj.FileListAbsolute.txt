@@ -1,0 +1,16 @@
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\bin\Debug\net8.0-windows\Models.deps.json
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\bin\Debug\net8.0-windows\Models.dll
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\bin\Debug\net8.0-windows\Models.pdb
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\bin\Debug\net8.0-windows\App.dll
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\bin\Debug\net8.0-windows\App.pdb
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.csproj.AssemblyReference.cache
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.AssemblyInfoInputs.cache
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.AssemblyInfo.cs
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.csproj.CoreCompileInputs.cache
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.csproj.Up2Date
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.dll
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\refint\Models.dll
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.pdb
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\ref\Models.dll
+C:\Users\ricar\Desktop\P_Venta\Punto_de_Venta\Models\obj\Debug\net8.0-windows\Models.sourcelink.json
