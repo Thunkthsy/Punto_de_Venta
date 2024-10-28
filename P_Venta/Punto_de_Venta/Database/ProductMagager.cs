@@ -8,9 +8,13 @@ using System.Data;
 
 namespace Database
 {
-    public class ProductMagager
+    // Corrected the class name from 'ProductMagager' to 'ProductManager'
+    public class ProductManager
     {
-        
+        /// <summary>
+        /// Asynchronously retrieves a list of products from the database.
+        /// </summary>
+        /// <returns>A list of Producto objects representing the products.</returns>
         public static async Task<List<Producto>> GetProductsAsync()
         {
             List<Producto> productos = new List<Producto>();
@@ -21,9 +25,18 @@ namespace Database
                 {
                     await conexion.OpenAsync();
 
-                    string consulta = @"SELECT p.codigo, p.nombre, p.descripcion, p.precio, p.existencia, m.desc_medidas 
-                                        FROM productos p
-                                        JOIN medidas m ON p.id_medidas = m.id_medidas";
+                    // SQL query to select product details, joining with 'medidas' table to get measurement descriptions
+                    string consulta = @"
+                        SELECT 
+                            p.codigo, 
+                            p.nombre, 
+                            p.descripcion, 
+                            p.precio, 
+                            p.existencia, 
+                            p.usar_inventario, -- Assuming this field indicates if stock is tracked
+                            m.desc_medidas 
+                        FROM productos p
+                        JOIN medidas m ON p.id_medidas = m.id_medidas";
 
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
@@ -31,6 +44,7 @@ namespace Database
                         {
                             while (await lector.ReadAsync())
                             {
+                                // Create a new Producto object and map the fields from the database
                                 Producto producto = new Producto
                                 {
                                     Codigo = lector.IsDBNull(lector.GetOrdinal("codigo")) ? 0 : lector.GetInt32("codigo"),
@@ -39,6 +53,7 @@ namespace Database
                                     Precio = lector.IsDBNull(lector.GetOrdinal("precio")) ? 0.00m : lector.GetDecimal("precio"),
                                     Existencia = lector.IsDBNull(lector.GetOrdinal("existencia")) ? 0 : lector.GetInt32("existencia"),
                                     Medida = lector.IsDBNull(lector.GetOrdinal("desc_medidas")) ? "N/A" : lector.GetString("desc_medidas"),
+                                    UsaStock = lector.IsDBNull(lector.GetOrdinal("usar_inventario")) ? 0 : lector.GetInt32("usar_inventario"),
                                     Cantidad = 0
                                 };
 
@@ -50,13 +65,18 @@ namespace Database
             }
             catch (Exception ex)
             {
+                // Throw a new exception with a message
                 throw new Exception("Error al obtener los productos: " + ex.Message);
             }
 
             return productos;
         }
 
-        
+        /// <summary>
+        /// Asynchronously updates the stock quantities of products in the database after a sale.
+        /// </summary>
+        /// <param name="productos">A list of products with quantities to be deducted from stock.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public static async Task UpdateStockAsync(List<Producto> productos)
         {
             try
@@ -67,27 +87,28 @@ namespace Database
 
                     foreach (var producto in productos)
                     {
-                        // Verificar si el producto usa control de inventario (UsaStock == 1)
+                        // Check if the product uses stock tracking (UsaStock == 1)
                         if (producto.UsaStock == 1)
                         {
-                            // Verificar si hay suficiente stock disponible
+                            // Verify that there is enough stock available
                             if (producto.Cantidad > producto.Existencia)
                             {
                                 throw new Exception($"No hay suficiente stock para el producto con código {producto.Codigo}.");
                             }
 
-                            // Consulta para actualizar la cantidad de productos
-                            string consulta = @"UPDATE productos 
-                                        SET existencia = existencia - @CantidadVendida 
-                                        WHERE codigo = @Codigo";
+                            // SQL query to update the product's stock quantity
+                            string consulta = @"
+                                UPDATE productos 
+                                SET existencia = existencia - @CantidadVendida 
+                                WHERE codigo = @Codigo";
 
                             using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                             {
-                                // Agregar parámetros
+                                // Add parameters to the command
                                 comando.Parameters.AddWithValue("@CantidadVendida", producto.Cantidad);
                                 comando.Parameters.AddWithValue("@Codigo", producto.Codigo);
 
-                                // Ejecutar el comando
+                                // Execute the command
                                 await comando.ExecuteNonQueryAsync();
                             }
                         }
@@ -96,6 +117,7 @@ namespace Database
             }
             catch (Exception ex)
             {
+                // Throw a new exception with a message
                 throw new Exception("Error al actualizar la cantidad de productos: " + ex.Message);
             }
         }

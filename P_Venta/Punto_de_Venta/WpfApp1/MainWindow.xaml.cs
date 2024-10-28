@@ -1,52 +1,61 @@
-﻿// MainWindow.xaml.cs
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel; 
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using Database;
-using Models;
-using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
+using Database; 
+using Models;   
+using MySql.Data.MySqlClient;
 
 namespace WpfApp1
 {
-    public partial class MainWindow : Window
+    // MainWindow class inherits from Window and implements INotifyPropertyChanged for data binding
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        // ObservableCollection to hold products
-        public ObservableCollection<Producto> Productos { get; set; }
+        // Collection of products
+        private ObservableCollection<Producto> _productos = new ObservableCollection<Producto>();
+        public ObservableCollection<Producto> Productos
+        {
+            get => _productos;
+            set
+            {
+                if (_productos != value)
+                {
+                    _productos = value;
+                    OnPropertyChanged(nameof(Productos));
+                }
+            }
+        }
 
+        // Constructor
         public MainWindow()
         {
             InitializeComponent();
             Productos = new ObservableCollection<Producto>();
-            //DataContext = this; // Set DataContext for data binding
-            //currentTicket = new Ticket
-            //{
-                //Folio = GenerateNewFolio() // Implement this method to generate unique folio numbers
-            //};
+            DataContext = this;
 
-            // Bind the DataGrid to the Productos collection in currentTicket
-            //dGProductos.ItemsSource = currentTicket.Productos;
-
-            // Set DataContext for data binding if necessary
-            //this.DataContext = currentTicket;
+            // Bind the DataGrid to the Productos collection
+            dGProductos.ItemsSource = Productos;
         }
 
+        // Event handler for the 'Search' button click
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            // Open Window2 as a dialog
+            // Open Window2 as a dialog to select a product
             Window2 window2 = new Window2();
             if (window2.ShowDialog() == true)
             {
                 // Retrieve the selected product
-                Models.Producto? selectedProduct = window2.SelectedProducto;
+                Producto? selectedProduct = window2.SelectedProducto;
 
                 if (selectedProduct != null)
                 {
-                    // Add the product to DataGrid
-                    AddProductToDataGrid(selectedProduct);
+                    // Add the product to the collection
+                    AddProduct(selectedProduct);
                 }
                 else
                 {
@@ -55,13 +64,13 @@ namespace WpfApp1
             }
         }
 
-
-        private void AddProductToDataGrid(Producto product)
+        // Method to add a product to the collection
+        private void AddProduct(Producto product)
         {
             // Check if the product uses stock tracking (UsaStock is 1) and if the stock is zero
             if (product.UsaStock == 1 && product.Existencia == 0)
             {
-                // Display an error message if the product's stock is zero or negative
+                // Display an error message if the product's stock is zero
                 lblProductos.Content = "El producto no se puede agregar porque su stock es cero.";
                 lblProductos.Visibility = Visibility.Visible;
                 MessageBox.Show("El producto no se puede agregar porque su stock es cero.", "Error de Stock", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -78,7 +87,7 @@ namespace WpfApp1
                 {
                     lblProductos.Content = "No hay suficiente producto en stock";
                     lblProductos.Visibility = Visibility.Visible;
-                    MessageBox.Show("El producto no se puede agregar porque excede el stock disponible.","Error de Stock", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("El producto no se puede agregar porque excede el stock disponible.", "Error de Stock", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
@@ -98,7 +107,7 @@ namespace WpfApp1
                     Precio = product.Precio,
                     Existencia = product.Existencia,
                     Medida = product.Medida,
-                    Cantidad = 1,
+                    Cantidad = 1,           // Set initial quantity to 1
                     UsaStock = product.UsaStock,
                     Departamento = product.Departamento
                 };
@@ -109,16 +118,20 @@ namespace WpfApp1
                 lblProductos.Visibility = Visibility.Visible;
             }
 
-            // Update the total cost
-            UpdateTotal();
+            // Update the total label
+            lblTotal.Content = $"Total: {TotalAmount:N2}";
         }
 
-        private void UpdateTotal()
+        // Property to calculate the total amount
+        public decimal TotalAmount
         {
-            decimal total = Productos.Sum(p => p.Precio * p.Cantidad);
-            lblTotal.Content = $"Total: {total:N2}";
+            get
+            {
+                return Productos.Sum(p => p.Precio * p.Cantidad);
+            }
         }
 
+        // Event handler for 'Enter' button click (searching product by code)
         private async void btnEnter_Click(object sender, RoutedEventArgs e)
         {
             string codeText = txtCode.Text.Trim();
@@ -127,11 +140,11 @@ namespace WpfApp1
                 try
                 {
                     // Call the async method to get product by code
-                    Models.Producto? product = await Database.Search.ProductByCodeAsync(codigo);
+                    Producto? product = await Database.Search.ProductByCodeAsync(codigo);
 
                     if (product != null)
                     {
-                        AddProductToDataGrid(product);
+                        AddProduct(product);
                         lblProductos.Content = "Producto agregado";
                         lblProductos.Visibility = Visibility.Visible;
                     }
@@ -158,6 +171,7 @@ namespace WpfApp1
             txtCode.Focus();
         }
 
+        // Event handler for when the 'Enter' key is pressed in txtCode textbox
         private void txtCode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -166,6 +180,7 @@ namespace WpfApp1
             }
         }
 
+        // Event handler for 'Remove' button click in the product DataGrid
         private void Quitar_Click(object sender, RoutedEventArgs e)
         {
             Button? button = sender as Button;
@@ -175,11 +190,13 @@ namespace WpfApp1
                 if (product != null)
                 {
                     Productos.Remove(product);
-                    UpdateTotal();
+                    // Update the total label
+                    lblTotal.Content = $"Total: {TotalAmount:N2}";
                 }
             }
         }
 
+        // Event handler for when a cell edit is ending in the DataGrid
         private void dGProductos_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             if (e.Column.Header.ToString() == "Cantidad")
@@ -189,59 +206,35 @@ namespace WpfApp1
                 dataGrid?.CommitEdit(DataGridEditingUnit.Row, true);
 
                 // Update total after editing quantity
-                UpdateTotal();
+                lblTotal.Content = $"Total: {TotalAmount:N2}";
             }
         }
 
-        // Implement other event handlers as needed
-        private void btnVentas_Click(object sender, RoutedEventArgs e)
-        {
-            // Implement functionality for Ventas button
-        }
-
-        private void btnInventario_Click(object sender, RoutedEventArgs e)
-        {
-            // Open Form3(
-            Window3 form3 = new Window3();
-            if (form3.ShowDialog() == true)
-            {
-                // Handle any logic here after Form3 is closed, if needed
-            }
-        }
-
-        private void btnConfiguracion_Click(object sender, RoutedEventArgs e)
-        {
-            // Implement functionality for Configuración button
-        }
-
-        private void btnCorte_Click(object sender, RoutedEventArgs e)
-        {
-            // Implement functionality for Corte button
-        }
-
+        // Event handler for 'Cobrar' button click
         private async void btn_Cobrar_Click(object sender, RoutedEventArgs e)
         {
-            // Calcular el total de los productos
-            decimal total = Productos.Sum(p => p.Precio * p.Cantidad);
+            decimal total = TotalAmount;
 
-            // Crear una instancia de Window4 y pasar el total
-            Window4 paymentWindow = new Window4();
-            paymentWindow.TotalAmount = total;  // Asignar el total
+            // Create an instance of Window4 (payment window) and pass the total
+            Window4 paymentWindow = new Window4
+            {
+                TotalAmount = total  // Assign the total
+            };
 
-            // Mostrar la ventana de pago
+            // Show the payment window
             if (paymentWindow.ShowDialog() == true)
             {
-                // Obtener el monto pagado y calcular el cambio
+                // Get the amount paid and calculate the change
                 decimal paymentAmount = paymentWindow.PaymentAmount;
                 decimal change = paymentAmount - total;
 
-                // Mostrar el resumen del pago
+                // Show the payment summary
                 MessageBox.Show($"Total: {total:C}\nPago: {paymentAmount:C}\nCambio: {change:C}", "Resumen de Pago", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                // Actualizar las cantidades de productos en la base de datos
+                // Update the stock quantities of products in the database
                 try
                 {
-                    await Database.ProductMagager.UpdateStockAsync(Productos.ToList());
+                    await Database.ProductManager.UpdateStockAsync(Productos.ToList());
                     MessageBox.Show("Cantidad de productos actualizada en la base de datos.", "Actualización exitosa", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -249,11 +242,11 @@ namespace WpfApp1
                     MessageBox.Show("Error al actualizar la cantidad de productos: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                // Limpiar el DataGrid (colección de productos) después del pago
-                Productos.Clear(); // Limpiar la lista de productos
-
-                // Actualizar el total a cero después de limpiar el DataGrid
-                UpdateTotal(); // Método que ya actualiza la etiqueta de total
+                // Clear the products and reset total
+                Productos.Clear();
+                lblTotal.Content = $"Total: {TotalAmount:N2}";
+                lblProductos.Content = "Venta completada.";
+                lblProductos.Visibility = Visibility.Visible;
             }
             else
             {
@@ -261,6 +254,36 @@ namespace WpfApp1
             }
         }
 
+        // Event handler for 'Ventas' button click
+        private void btnVentas_Click(object sender, RoutedEventArgs e)
+        {
+            // Implement functionality for Ventas button
+        }
+
+        // Event handler for 'Inventario' button click
+        private void btnInventario_Click(object sender, RoutedEventArgs e)
+        {
+            // Open Window3 (inventory management)
+            Window3 form3 = new Window3();
+            if (form3.ShowDialog() == true)
+            {
+                // Handle any logic here after Window3 is closed, if needed
+            }
+        }
+
+        // Event handler for 'Configuración' button click
+        private void btnConfiguracion_Click(object sender, RoutedEventArgs e)
+        {
+            // Implement functionality for Configuración button
+        }
+
+        // Event handler for 'Corte' button click
+        private void btnCorte_Click(object sender, RoutedEventArgs e)
+        {
+            // Implement functionality for Corte button
+        }
+
+        // Event handler to remove placeholder text from txtCode when it gets focus
         private void RemoveText(object sender, EventArgs e)
         {
             if (txtCode.Text == "Introduce el código del Producto o Nombre")
@@ -270,6 +293,7 @@ namespace WpfApp1
             }
         }
 
+        // Event handler to add placeholder text to txtCode when it loses focus
         private void AddText(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCode.Text))
@@ -279,7 +303,14 @@ namespace WpfApp1
             }
         }
 
+        // Implement INotifyPropertyChanged interface to notify UI of property changes
+        public event PropertyChangedEventHandler? PropertyChanged;
 
+        // Method to raise the PropertyChanged event
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
 

@@ -10,7 +10,7 @@ namespace Database
 {
     public class Search
     {
-        
+
         public static async Task<List<Producto>> ProductsAsync(string searchText)
         {
             List<Producto> productos = new List<Producto>();
@@ -173,3 +173,5 @@ namespace Database
         }
     }
 }
+
+

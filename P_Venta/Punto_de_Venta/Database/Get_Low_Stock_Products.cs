@@ -10,7 +10,7 @@ namespace Database
 {
     public static class Get_Low_Stock_Products
     {
-        public static async Task<List<Producto>> ObtenerProductosConStockCeroAsync()
+        public static async Task<List<Producto>> StockCeroAsync()
         {
             List<Producto> productos = new List<Producto>();
 

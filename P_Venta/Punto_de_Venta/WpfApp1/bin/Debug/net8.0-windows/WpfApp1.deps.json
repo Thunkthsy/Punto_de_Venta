@@ -9,9 +9,7 @@
       "WpfApp1/1.0.0": {
         "dependencies": {
           "Database": "1.0.0",
-          "Models": "1.0.0",
-          "MySql.Data": "9.0.0",
-          "MySqlConnector": "2.3.7"
+          "Models": "1.0.0"
         },
         "runtime": {
           "WpfApp1.dll": {}
@@ -59,14 +57,6 @@
           "lib/net6.0/K4os.Hash.xxHash.dll": {
             "assemblyVersion": "1.0.8.0",
             "fileVersion": "1.0.8.0"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
-        "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.723.27404"
           }
         }
       },
@@ -119,17 +109,6 @@
             "rid": "win-x64",
             "assetType": "native",
             "fileVersion": "4.1.0.0"
-          }
-        }
-      },
-      "MySqlConnector/2.3.7": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
-        },
-        "runtime": {
-          "lib/net8.0/MySqlConnector.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.3.7.0"
           }
         }
       },
@@ -226,23 +205,10 @@
           }
         }
       },
-      "App/1.0.0": {
-        "dependencies": {
-          "MySql.Data": "9.0.0",
-          "MySqlConnector": "2.3.7"
-        },
-        "runtime": {
-          "App.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Database/1.0.0": {
         "dependencies": {
           "Models": "1.0.0",
-          "MySql.Data": "9.0.0",
-          "MySqlConnector": "2.3.7"
+          "MySql.Data": "9.0.0"
         },
         "runtime": {
           "Database.dll": {
@@ -252,11 +218,6 @@
         }
       },
       "Models/1.0.0": {
-        "dependencies": {
-          "App": "1.0.0",
-          "MySql.Data": "9.0.0",
-          "MySqlConnector": "2.3.7"
-        },
         "runtime": {
           "Models.dll": {
             "assemblyVersion": "1.0.0",
@@ -307,13 +268,6 @@
       "path": "k4os.hash.xxhash/1.0.8",
       "hashPath": "k4os.hash.xxhash.1.0.8.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pkeBFx0vqMW/A3aUVHh7MPu3WkBhaVlezhSZeb1c9XD0vUReYH1TLFSy5MxJgZfmz5LZzYoErMorlYZiwpOoNA==",
-      "path": "microsoft.extensions.logging.abstractions/7.0.1",
-      "hashPath": "microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512"
-    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -334,13 +288,6 @@
       "sha512": "sha512-YT2/fdDy3FBx5ZK0qsupEs9Gt0iFo/mZR+ND5cJwrr+6xguAOXyYpYUbEj27UcLZER5InOUrJQYyUaPIDil2Xw==",
       "path": "mysql.data/9.0.0",
       "hashPath": "mysql.data.9.0.0.nupkg.sha512"
-    },
-    "MySqlConnector/2.3.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-YiVOxvJ+vAYW8NT9gHv8RxKCDFCSXAObF3z0Ou/8WRv8Lsn2QsxaPW5xEwPE+xCcAq6BGkrI8GTOC09Xg09blQ==",
-      "path": "mysqlconnector/2.3.7",
-      "hashPath": "mysqlconnector.2.3.7.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",
@@ -488,11 +435,6 @@
       "sha512": "sha512-Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
       "path": "zstdsharp.port/0.8.0",
       "hashPath": "zstdsharp.port.0.8.0.nupkg.sha512"
-    },
-    "App/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Database/1.0.0": {
       "type": "project",
