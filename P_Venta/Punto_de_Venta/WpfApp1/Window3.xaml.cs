@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
-using Database;
-using Models; 
+using Database; // Contains  database connection and methods
+using Models;   // Contains  model classes like Producto
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for Window3.xaml
-    /// </summary>
+
     public partial class Window3 : Window
     {
         public Window3()
@@ -52,7 +50,8 @@ namespace WpfApp1
         {
             try
             {
-                List<Producto> productosSinStock = await Get_Low_Stock_Products.ObtenerProductosConStockCeroAsync();
+                // Call the method in ProductManager to get products with zero stock
+                List<Producto> productosSinStock = await ProductManager.Get_Low_Stock_Products.StockCeroAsync();
 
                 // Bind the product list with zero stock to the DataGrid
                 dGProd_Stock.ItemsSource = productosSinStock;

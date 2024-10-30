@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Models;assembly=Models"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=True}"
         Title="Menú Principal"
         Height="600"
         Width="1000"
@@ -82,6 +84,7 @@
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="451*"/>
         </Grid.ColumnDefinitions>
+
         <!-- Buttons with Names and Click Handlers -->
         <Button Name="btnVentas" Content="VENTAS" HorizontalAlignment="Left" Margin="50,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnVentas_Click" Grid.ColumnSpan="2"/>
         <Button Name="btnInventario" Content="INVENTARIO" HorizontalAlignment="Left" Margin="152,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnInventario_Click" Grid.Column="1"/>
@@ -93,7 +96,7 @@
 
         <!-- Label and TextBox for Product Code -->
         <Label Name="lblCode" Content="Código del Producto:" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top" Width="164" Height="30" Grid.ColumnSpan="2"/>
-        <TextBox Name="txtCode" Text="Introduce el código del Producto o Nombre"  HorizontalAlignment="Left" Margin="267,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" Height="30" TextAlignment="Center" KeyDown="txtCode_KeyDown" GotFocus="RemoveText" LostFocus="AddText" Grid.Column="1"/>
+        <TextBox Name="txtCode" Text="Introduce el código del Producto o Nombre" HorizontalAlignment="Left" Margin="267,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" Height="30" TextAlignment="Center" KeyDown="txtCode_KeyDown" GotFocus="RemoveText" LostFocus="AddText" Grid.Column="1"/>
 
         <!-- Buttons for Search and Insert -->
         <Button Name="btnSearch" Content="BUSCAR" HorizontalAlignment="Left" Margin="152,86,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnSearch_Click" Grid.Column="1"/>
@@ -101,25 +104,32 @@
 
         <!-- DataGrid for Products -->
         <DataGrid Name="dGProductos" Margin="50,190,50,91" AutoGenerateColumns="False"
-                  ItemsSource="{Binding Productos}" CellEditEnding="dGProductos_CellEditEnding" Grid.ColumnSpan="2">
+          ItemsSource="{Binding Productos}" CellEditEnding="dGProductos_CellEditEnding" Grid.ColumnSpan="2"
+          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False">
             <DataGrid.Columns>
                 <!-- Código del Producto -->
-                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="*" />
+                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="*" IsReadOnly="True" />
 
                 <!-- Nombre del Producto -->
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" IsReadOnly="True" />
+
+                <!-- Descripción del Producto -->
+                <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="*" IsReadOnly="True" />
 
                 <!-- Precio del Producto -->
-                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="*" />
-
-                <!-- Existencia (Stock) -->
-                <DataGridTextColumn Header="Stock" Binding="{Binding Existencia}" Width="*" />
-
-                <!-- Unidad de Medida -->
-                <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="*" />
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio, StringFormat=C}" Width="*" IsReadOnly="True" />
 
                 <!-- Cantidad -->
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="*" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" IsReadOnly="False" />
+
+                <!-- Unidad de Medida -->
+                <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="*" IsReadOnly="True" />
+
+                <!-- Existencia (Stock) -->
+                <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}" Width="*" IsReadOnly="True" />
+
+                <!-- Total (Precio x Cantidad) -->
+                <DataGridTextColumn Header="Total" Binding="{Binding Total, StringFormat=C}" Width="*" IsReadOnly="True" />
 
                 <!-- Acción (Botón para quitar) -->
                 <DataGridTemplateColumn Header="Acción" Width="100">
@@ -138,7 +148,8 @@
         <!-- Label to display total -->
         <Label Name="lblTotal" Content="Total: 0.00" HorizontalAlignment="Left" Margin="714,495,0,0" VerticalAlignment="Top" Width="138" Height="30" RenderTransformOrigin="0.45,0.167" Grid.Column="1"/>
         <Button x:Name="btn_Cobrar" Content="COBRAR" HorizontalAlignment="Left" Margin="548,495,0,0" VerticalAlignment="Top" Width="110" Height="30" RenderTransformOrigin="0.905,0.475" Click="btn_Cobrar_Click" Grid.Column="1"/>
+
+        <!-- ComboBox for Ticket Selection -->
         <ComboBox x:Name="CBoxTicket" HorizontalAlignment="Left" Margin="50,163,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
-

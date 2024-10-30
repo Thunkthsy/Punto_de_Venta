@@ -1,6 +1,7 @@
 ﻿// MainWindow.xaml.cs
 using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using Database;
 using Models;
-using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
 
 namespace WpfApp1
 {
@@ -20,12 +20,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            Productos = new ObservableCollection<Producto>();
-            //DataContext = this; // Set DataContext for data binding
-            //currentTicket = new Ticket
-            //{
-                //Folio = GenerateNewFolio() // Implement this method to generate unique folio numbers
-            //};
+            // DataContext is set to this for data binding
+            DataContext = this;
 
             // Bind the DataGrid to the Productos collection in currentTicket
             //dGProductos.ItemsSource = currentTicket.Productos;
@@ -34,7 +30,8 @@ namespace WpfApp1
             //this.DataContext = currentTicket;
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        // Event handler for the 'Search' button click
+        private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             // Open Window2 as a dialog
             Window2 window2 = new Window2();
@@ -50,7 +47,7 @@ namespace WpfApp1
                 }
                 else
                 {
-                    MessageBox.Show("No product was selected.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("No se seleccionó ningún producto.", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
@@ -58,22 +55,21 @@ namespace WpfApp1
 
         private void AddProductToDataGrid(Producto product)
         {
-            // Check if the product uses stock tracking (UsaStock is 1) and if the stock is zero
+            // Verify if the product uses stock and if its existence is zero
             if (product.UsaStock == 1 && product.Existencia == 0)
             {
-                // Display an error message if the product's stock is zero or negative
                 lblProductos.Content = "El producto no se puede agregar porque su stock es cero.";
                 lblProductos.Visibility = Visibility.Visible;
                 MessageBox.Show("El producto no se puede agregar porque su stock es cero.", "Error de Stock", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // Check if the product already exists in the collection
+            // Find if the product already exists in the collection
             var existingProduct = Productos.FirstOrDefault(p => p.Codigo == product.Codigo);
 
             if (existingProduct != null)
             {
-                // Check if adding one more would exceed the available stock
+                // Verify if adding one more exceeds the available stock
                 if (product.UsaStock == 1 && existingProduct.Cantidad + 1 > product.Existencia)
                 {
                     lblProductos.Content = "No hay suficiente producto en stock";
@@ -82,7 +78,7 @@ namespace WpfApp1
                     return;
                 }
 
-                // Increase the quantity if the stock is sufficient
+                // Increment the quantity if the stock is sufficient
                 existingProduct.Cantidad += 1;
                 lblProductos.Content = "Cantidad del producto aumentada";
                 lblProductos.Visibility = Visibility.Visible;
@@ -98,7 +94,7 @@ namespace WpfApp1
                     Precio = product.Precio,
                     Existencia = product.Existencia,
                     Medida = product.Medida,
-                    Cantidad = 1,
+                    Cantidad = 1, // Set the initial quantity to 1
                     UsaStock = product.UsaStock,
                     Departamento = product.Departamento
                 };
@@ -126,8 +122,8 @@ namespace WpfApp1
             {
                 try
                 {
-                    // Call the async method to get product by code
-                    Models.Producto? product = await Database.Search.ProductByCodeAsync(codigo);
+                    // Call the async method to get product by code using the Search class
+                    Producto? product = await Search.ProductByCodeAsync(codigo);
 
                     if (product != null)
                     {
@@ -241,7 +237,7 @@ namespace WpfApp1
                 // Actualizar las cantidades de productos en la base de datos
                 try
                 {
-                    await Database.ProductMagager.UpdateStockAsync(Productos.ToList());
+                    await ProductManager.UpdateStockAsync(Productos.ToList());
                     MessageBox.Show("Cantidad de productos actualizada en la base de datos.", "Actualización exitosa", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
@@ -279,7 +275,8 @@ namespace WpfApp1
             }
         }
 
+        // Implement INotifyPropertyChanged interface to notify UI of property changes
+        public event PropertyChangedEventHandler PropertyChanged;
 
     }
 }
-
