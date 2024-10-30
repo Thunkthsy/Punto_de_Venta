@@ -506,23 +506,6 @@
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {}
         }
-      },
-      "App/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "MySql.Data": "9.0.0",
-          "MySqlConnector": "2.3.7"
-        },
-        "compile": {
-          "bin/placeholder/App.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/App.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       }
     }
   },
@@ -1747,16 +1730,10 @@
         "zstdsharp.port.0.8.0.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
-    },
-    "App/1.0.0": {
-      "type": "project",
-      "path": "../App/App.csproj",
-      "msbuildProject": "../App/App.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "App >= 1.0.0",
       "MySql.Data >= 9.0.0",
       "MySqlConnector >= 2.3.7"
     ]
@@ -1768,11 +1745,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\ricar\\OneDrive-Laureate Mexico\\UNITEC\\6 CUATRIMESTRE\\23-11-2024\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\ricar\\OneDrive-Laureate Mexico\\UNITEC\\6 CUATRIMESTRE\\23-11-2024\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\obj\\",
+      "outputPath": "C:\\Users\\ricar\\OneDrive-Laureate Mexico\\UNITEC\\6 CUATRIMESTRE\\23-11-2024\\P_Venta\\Punto_de_Venta\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1793,11 +1770,7 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "projectReferences": {
-            "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\App\\App.csproj": {
-              "projectPath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\App\\App.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

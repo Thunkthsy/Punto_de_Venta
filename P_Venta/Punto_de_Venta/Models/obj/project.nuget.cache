@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qsLdBYXo73M=",
+  "dgSpecHash": "/TQEC72ZpX8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ricar\\Desktop\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
+  "projectFilePath": "C:\\Users\\ricar\\OneDrive-Laureate Mexico\\UNITEC\\6 CUATRIMESTRE\\23-11-2024\\P_Venta\\Punto_de_Venta\\Models\\Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ricar\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\ricar\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

@@ -23,11 +23,9 @@ namespace WpfApp1
             // DataContext is set to this for data binding
             DataContext = this;
 
-            // Bind the DataGrid to the Productos collection in currentTicket
-            //dGProductos.ItemsSource = currentTicket.Productos;
+            // Inicializar la colección de productos
+            Productos = new ObservableCollection<Producto>();
 
-            // Set DataContext for data binding if necessary
-            //this.DataContext = currentTicket;
         }
 
         // Event handler for the 'Search' button click

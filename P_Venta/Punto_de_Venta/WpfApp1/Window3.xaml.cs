@@ -28,7 +28,7 @@ namespace WpfApp1
         {
             try
             {
-                List<Producto> productos = await ProductMagager.GetProductsAsync();
+                List<Producto> productos = await ProductManager.GetProductsAsync();
 
                 // Bind the product list to the DataGrid
                 dGProd_Stock.ItemsSource = productos;
