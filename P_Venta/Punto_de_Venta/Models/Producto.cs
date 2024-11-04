@@ -78,48 +78,5 @@ namespace Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    public static class Stock
-    {
-
-        public static bool IsStockAvailable(Producto product, int quantityToAdd = 1)
-        {
-
-            if (product.UsaStock == 1)
-            {
-
-                if (product.Existencia <= 0)
-                {
-                    return false;
-                }
-
-
-                if (product.Existencia < quantityToAdd)
-                {
-                    return false;
-                }
-            }
-
-
-            return true;
-        }
-
-        public static string GetStockErrorMessage(Producto product, int quantityToAdd = 1)
-        {
-            if (product.UsaStock == 1)
-            {
-                if (product.Existencia <= 0)
-                {
-                    return "El producto no se pudo agregar. No hay stock disponible actualmente.";
-                }
-
-                if (product.Existencia < quantityToAdd)
-                {
-                    return $"Stock insuficiente para agregar {quantityToAdd} unidades. Solo hay {product.Existencia} unidades disponibles. Intente agregar una cantidad menor.";
-                }
-            }
-
-            return string.Empty; 
-        }
-    }
 }
 
