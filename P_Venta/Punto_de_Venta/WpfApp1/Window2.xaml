@@ -59,6 +59,7 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="Auto"/>
                 <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}" Width="Auto"/>
                 <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="Auto"/>
+                <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" Width="Auto"/>
                 <DataGridTemplateColumn Header="Acción" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

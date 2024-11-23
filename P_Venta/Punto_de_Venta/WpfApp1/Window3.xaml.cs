@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
-using Database; // Contains  database connection and methods
-using Models;   // Contains  model classes like Producto
+using Database; // Contains database connection and methods
+using Models;   // Contains model classes like Producto
 
 namespace WpfApp1
 {
-
     public partial class Window3 : Window
     {
+        public ObservableCollection<Producto> Productos { get; set; }
+
         public Window3()
         {
             InitializeComponent();
+            // Set the DataContext to this window
+            this.DataContext = this;
+            // Initialize the collection
+            Productos = new ObservableCollection<Producto>();
             // Load data when the window is loaded
             this.Loaded += Window3_Loaded;
         }
@@ -28,10 +34,16 @@ namespace WpfApp1
         {
             try
             {
-                List<Producto> productos = await ProductManager.GetProductsAsync();
+                List<Producto> productos = await Search.AllProductsAsync();
 
-                // Bind the product list to the DataGrid
-                dGProd_Stock.ItemsSource = productos;
+                // Clear the current collection
+                Productos.Clear();
+
+                // Add the products to the ObservableCollection
+                foreach (var producto in productos)
+                {
+                    Productos.Add(producto);
+                }
             }
             catch (Exception ex)
             {
@@ -51,10 +63,16 @@ namespace WpfApp1
             try
             {
                 // Call the method in ProductManager to get products with zero stock
-                List<Producto> productosSinStock = await ProductManager.Get_Low_Stock_Products.StockCeroAsync();
+                List<Producto> productosSinStock = await Search.ProductsWithStockCeroAsync();
 
-                // Bind the product list with zero stock to the DataGrid
-                dGProd_Stock.ItemsSource = productosSinStock;
+                // Clear the current collection
+                Productos.Clear();
+
+                // Add the products with zero stock to the ObservableCollection
+                foreach (var producto in productosSinStock)
+                {
+                    Productos.Add(producto);
+                }
 
                 // Update the label based on whether there are products with zero stock
                 if (productosSinStock.Count == 0)
@@ -74,4 +92,3 @@ namespace WpfApp1
         }
     }
 }
-

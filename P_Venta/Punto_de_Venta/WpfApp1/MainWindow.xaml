@@ -5,10 +5,9 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:models="clr-namespace:Models;assembly=Models"
-        d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=True}"
         Title="Menú Principal"
         Height="600"
-        Width="1000"
+        Width="1200"
         ResizeMode="NoResize"
         Background="{DynamicResource WindowBackgroundBrush}"
         mc:Ignorable="d">
@@ -77,6 +76,7 @@
             <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}" />
             <Setter Property="FontSize" Value="14" />
         </Style>
+
     </Window.Resources>
 
     <Grid>
@@ -86,26 +86,24 @@
         </Grid.ColumnDefinitions>
 
         <!-- Buttons with Names and Click Handlers -->
-        <Button Name="btnVentas" Content="VENTAS" HorizontalAlignment="Left" Margin="50,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnVentas_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="BtnVentas" Content="VENTAS" HorizontalAlignment="Left" Margin="50,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="BtnVentas_Click" Grid.ColumnSpan="2"/>
         <Button Name="btnInventario" Content="INVENTARIO" HorizontalAlignment="Left" Margin="152,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnInventario_Click" Grid.Column="1"/>
-        <Button Name="btnConfiguracion" Content="Configuración" HorizontalAlignment="Left" Margin="356,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnConfiguracion_Click" Grid.Column="1" Visibility="Hidden"/>
-        <Button Name="btnCorte" Content="CORTE" HorizontalAlignment="Left" Margin="548,41,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnCorte_Click" Grid.Column="1" Visibility="Hidden"/>
 
         <!-- Image -->
-        <Image Name="imgLogo" Margin="714,41,0,0" Source="/punto de venta.jpg" Width="121" Height="120" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Image Name="imgLogo" Margin="900,41,0,0" Source="/punto de venta.jpg" Width="121" Height="120" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
 
         <!-- Label and TextBox for Product Code -->
         <Label Name="lblCode" Content="Código del Producto:" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top" Width="164" Height="30" Grid.ColumnSpan="2"/>
-        <TextBox Name="txtCode" Text="Introduce el código del Producto o Nombre" HorizontalAlignment="Left" Margin="267,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" Height="30" TextAlignment="Center" KeyDown="txtCode_KeyDown" GotFocus="RemoveText" LostFocus="AddText" Grid.Column="1"/>
+        <TextBox Name="txtCode" Text="Introduce el código del Producto o Nombre" HorizontalAlignment="Left" Margin="267,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="30" TextAlignment="Center" KeyDown="txtCode_KeyDown" GotFocus="RemoveText" LostFocus="AddText" Grid.Column="1"/>
 
         <!-- Buttons for Search and Insert -->
         <Button Name="btnSearch" Content="BUSCAR" HorizontalAlignment="Left" Margin="152,86,0,0" VerticalAlignment="Top" Width="110" Height="30" Click="btnSearch_Click" Grid.Column="1"/>
-        <Button Name="btnEnter" Content="ENTER -- Ingresar Producto" HorizontalAlignment="Left" Margin="462,121,0,0" VerticalAlignment="Top" Width="196" Height="30" Click="btnEnter_Click" Grid.Column="1"/>
+        <Button Name="btnEnter" Content="ENTER -- Ingresar Producto" HorizontalAlignment="Left" Margin="685,86,0,0" VerticalAlignment="Top" Width="196" Height="30" Click="btnEnter_Click" Grid.Column="1"/>
 
         <!-- DataGrid for Products -->
-        <DataGrid Name="dGProductos" Margin="50,190,50,91" AutoGenerateColumns="False"
+        <DataGrid Name="dGProductos" Margin="50,190,50,89" AutoGenerateColumns="False"
           ItemsSource="{Binding Productos}" CellEditEnding="dGProductos_CellEditEnding" Grid.ColumnSpan="2"
-          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False">
+          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False" Height="320">
             <DataGrid.Columns>
                 <!-- Código del Producto -->
                 <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="*" IsReadOnly="True" />
@@ -120,7 +118,7 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding Precio, StringFormat=C}" Width="*" IsReadOnly="True" />
 
                 <!-- Cantidad -->
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" IsReadOnly="False" />
+                <DataGridTextColumn Header="Stock" Binding="{Binding Existencia}" Width="*" IsReadOnly="True" />
 
                 <!-- Unidad de Medida -->
                 <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="*" IsReadOnly="True" />
@@ -128,8 +126,8 @@
                 <!-- Existencia (Stock) -->
                 <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}" Width="*" IsReadOnly="True" />
 
-                <!-- Total (Precio x Cantidad) -->
-                <DataGridTextColumn Header="Total" Binding="{Binding Total, StringFormat=C}" Width="*" IsReadOnly="True" />
+                <!-- Departamento -->
+                <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" Width="*" IsReadOnly="True" />
 
                 <!-- Acción (Botón para quitar) -->
                 <DataGridTemplateColumn Header="Acción" Width="100">
@@ -143,13 +141,27 @@
         </DataGrid>
 
         <!-- Label to display messages -->
-        <Label Name="lblProductos" Content="" HorizontalAlignment="Left" Margin="50,494,0,0" VerticalAlignment="Top" Width="459" Height="30" Grid.ColumnSpan="2"/>
+        <Label Name="lblProductos" Content="" HorizontalAlignment="Left" Margin="49,520,0,0" VerticalAlignment="Top" Width="459" Height="30" Grid.ColumnSpan="2"/>
 
         <!-- Label to display total -->
-        <Label Name="lblTotal" Content="Total: 0.00" HorizontalAlignment="Left" Margin="714,495,0,0" VerticalAlignment="Top" Width="138" Height="30" RenderTransformOrigin="0.45,0.167" Grid.Column="1"/>
-        <Button x:Name="btn_Cobrar" Content="COBRAR" HorizontalAlignment="Left" Margin="548,495,0,0" VerticalAlignment="Top" Width="110" Height="30" RenderTransformOrigin="0.905,0.475" Click="btn_Cobrar_Click" Grid.Column="1"/>
+        <Label Name="lblTotal" Content="Total: 0.00" HorizontalAlignment="Left" Margin="889,511,0,0" VerticalAlignment="Top" Width="138" Height="30" RenderTransformOrigin="0.45,0.167" Grid.Column="1"/>
+        <Button x:Name="btn_Cobrar" Content="COBRAR" HorizontalAlignment="Left" Margin="783,511,0,0" VerticalAlignment="Top" Width="110" Height="30" RenderTransformOrigin="0.905,0.475" Click="btn_Cobrar_Click" Grid.Column="1"/>
 
-        <!-- ComboBox for Ticket Selection -->
-        <ComboBox x:Name="CBoxTicket" HorizontalAlignment="Left" Margin="50,163,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="CBoxTicket"
+          Validation.ErrorTemplate="{x:Null}"
+          HorizontalAlignment="Left"
+          Margin="50,163,0,0"
+          VerticalAlignment="Top"
+          Width="141"
+          Grid.ColumnSpan="2"
+          ItemsSource="{Binding TicketFolios}"
+          SelectedItem="{Binding Selected_Folio, Mode=TwoWay}" />
+        <Label x:Name="LblTicketFolio"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="267,152,0,0"
+            Content="{Binding Selected_Folio, StringFormat='Ticket: {0}'}" Grid.Column="1"/>
+        <Button x:Name="Btn_Pendiente" Grid.Column="1" Content="PENDIENTE" HorizontalAlignment="Left" Margin="152,155,0,0" VerticalAlignment="Top" Click="Button_Pendiente_Click" Height="30" Width="110"/>
+        <Label Content="Seleccionar Ticket" HorizontalAlignment="Left" Margin="53,132,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

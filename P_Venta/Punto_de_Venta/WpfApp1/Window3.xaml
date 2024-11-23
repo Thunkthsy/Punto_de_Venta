@@ -4,8 +4,18 @@
         xmlns:local="clr-namespace:WpfApp1"
         Title="Inventario" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dGProd_Stock" AutoGenerateColumns="True" Margin="10,41,10,10"/>
+        <DataGrid x:Name="dGProd_Stock" AutoGenerateColumns="False" Margin="0,60,0,0" ItemsSource="{Binding Productos}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="Auto"/>
+                <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="Auto"/>
+                <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btn_check_stock" Content="Buscar Productos sin Stock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Click="btn_check_stock_Click"/>
-        <Label x:Name="lb_stock" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,10,0,0"/>
+        <Label x:Name="lb_stock" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,7,0,0"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

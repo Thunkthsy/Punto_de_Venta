@@ -4,15 +4,15 @@ namespace Models
 {
     public class Producto : INotifyPropertyChanged
     {
-        private int _codigo;
-        private string? _nombre;
-        private string? _descripcion;
-        private decimal _precio;
-        private int _existencia;
-        private string? _medida;
-        private int _cantidad;
-        private string? _departamento;
-        private int _usaStock;
+        private int _codigo; //codigo
+        private string? _nombre; //nombre
+        private string? _descripcion; //descripcion
+        private decimal _precio; //precio
+        private int _existencia; //existencia
+        private string? _medida; //id_medidas
+        private int _cantidad; //// Quantity is managed in dGProductos in the main window.
+        private string? _departamento; //id_departamento
+        private int _usaStock; //usa_stock
 
         public int Codigo
         {
@@ -50,21 +50,18 @@ namespace Models
             set { _medida = value; OnPropertyChanged(nameof(Medida)); }
         }
 
-        // Property for Cantidad
         public int Cantidad
         {
             get => _cantidad;
             set { _cantidad = value; OnPropertyChanged(nameof(Cantidad)); }
         }
 
-        // Property for Departamento
-        public string? Departamento
+        public required string? Departamento
         {
             get => _departamento;
             set { _departamento = value; OnPropertyChanged(nameof(Departamento)); }
         }
 
-        // Property for UsaStock
         public int UsaStock
         {
             get => _usaStock;
@@ -78,5 +75,7 @@ namespace Models
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+
 }
 

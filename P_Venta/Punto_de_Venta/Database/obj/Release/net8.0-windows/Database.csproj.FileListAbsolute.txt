@@ -1,0 +1,16 @@
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\bin\Release\net8.0-windows\Database.deps.json
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\bin\Release\net8.0-windows\Database.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\bin\Release\net8.0-windows\Database.pdb
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\bin\Release\net8.0-windows\Models.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\bin\Release\net8.0-windows\Models.pdb
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.csproj.AssemblyReference.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.AssemblyInfoInputs.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.AssemblyInfo.cs
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.csproj.CoreCompileInputs.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.sourcelink.json
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.csproj.Up2Date
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\refint\Database.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\Database.pdb
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Database\obj\Release\net8.0-windows\ref\Database.dll

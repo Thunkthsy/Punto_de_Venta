@@ -1,0 +1,13 @@
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\bin\Release\net8.0-windows\Models.deps.json
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\bin\Release\net8.0-windows\Models.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\bin\Release\net8.0-windows\Models.pdb
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.csproj.AssemblyReference.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.AssemblyInfoInputs.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.AssemblyInfo.cs
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.csproj.CoreCompileInputs.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.sourcelink.json
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\refint\Models.dll
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\Models.pdb
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\Models\obj\Release\net8.0-windows\ref\Models.dll

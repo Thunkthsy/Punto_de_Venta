@@ -1,143 +1,107 @@
-﻿//using Models;
-//using System.Collections.ObjectModel;
-//using System.ComponentModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Linq;
 
-//namespace Models
-//{
-//    public class Ticket : INotifyPropertyChanged
-//    {
-//        private int _idTicket;
-//        private int _folio;
-//        private int _estado;
-//        private decimal _totalTicket;
-//        private ObservableCollection<Producto> _productos = new ObservableCollection<Producto>();
+namespace Models
+{
+    public class Ticket : INotifyPropertyChanged
+    {
 
-//        public Ticket()
-//        {
-//            _productos.CollectionChanged += Productos_CollectionChanged;
-//        }
+        private int _folio;  // Unique identifier for a ticket
+        private int _estado; // 1 = Open, 2 = Closed
+        private decimal _totalTicket; // This value is set using the following calculation:
+                                      // `decimal total = Productos.Sum(p => p.Precio * p.Cantidad);`
+                                      // Derived from the product collection in `dgProducts` in the main window,
+                                      // then saved as a separate value in the database (historical price).
 
-//        public int IdTicket
-//        {
-//            get => _idTicket;
-//            set
-//            {
-//                _idTicket = value;
-//                OnPropertyChanged(nameof(IdTicket));
-//            }
-//        }
+        private DateTime _ticketFecha; // Property for ticket date
+        private ObservableCollection<Producto> _productos = new ObservableCollection<Producto>();
 
-//        public int Folio
-//        {
-//            get => _folio;
-//            set
-//            {
-//                _folio = value;
-//                OnPropertyChanged(nameof(Folio));
-//            }
-//        }
+        public Ticket()
+        {
+            _productos.CollectionChanged += Productos_CollectionChanged;
+            _ticketFecha = DateTime.Now; // Default to current date when a ticket is created
+        }
 
-//        public int Estado
-//        {
-//            get => _estado;
-//            set
-//            {
-//                _estado = value;
-//                OnPropertyChanged(nameof(Estado));
-//            }
-//        }
+        public int Folio
+        {
+            get => _folio;
+            set { _folio = value; OnPropertyChanged(nameof(Folio)); }
+        }
 
-//        public decimal TotalTicket
-//        {
-//            get => _totalTicket;
-//            set
-//            {
-//                _totalTicket = value;
-//                OnPropertyChanged(nameof(TotalTicket));
-//            }
-//        }
+        public int Estado
+        {
+            get => _estado;
+            set { _estado = value; OnPropertyChanged(nameof(Estado)); }
+        }
 
-//        public ObservableCollection<Producto> Productos
-//        {
-//            get => _productos;
-//            set
-//            {
-//                if (value == null)
-//                    throw new ArgumentNullException(nameof(value));
+        public decimal TotalTicket
+        {
+            get => _totalTicket;
+            set { _totalTicket = value; OnPropertyChanged(nameof(TotalTicket)); }
+        }
 
-//                _productos.CollectionChanged -= Productos_CollectionChanged;
+        public DateTime TicketFecha
+        {
+            get => _ticketFecha;
+            set { _ticketFecha = value; OnPropertyChanged(nameof(TicketFecha)); }
+        }
 
-//                _productos = value;
-//                _productos.CollectionChanged += Productos_CollectionChanged;
-//                OnPropertyChanged(nameof(Productos));
-//                OnPropertyChanged(nameof(TotalAmount));
-//            }
-//        }
+        public ObservableCollection<Producto> Productos
+        {
+            get => _productos;
+            set
+            {
+                if (value == null) throw new ArgumentNullException(nameof(value));
 
-//        public decimal TotalAmount
-//        {
-//            get => _productos.Sum(p => p.Precio * p.Cantidad);
-//        }
+                _productos.CollectionChanged -= Productos_CollectionChanged;
+                _productos = value;
+                _productos.CollectionChanged += Productos_CollectionChanged;
 
-//        private void Productos_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
-//        {
-//            if (e.OldItems != null)
-//            {
-//                foreach (Producto oldItem in e.OldItems)
-//                {
-//                    oldItem.PropertyChanged -= Producto_PropertyChanged;
-//                }
-//            }
+                OnPropertyChanged(nameof(Productos));
+                OnPropertyChanged(nameof(TotalAmount));
+            }
+        }
 
-//            if (e.NewItems != null)
-//            {
-//                foreach (Producto newItem in e.NewItems)
-//                {
-//                    newItem.PropertyChanged += Producto_PropertyChanged;
-//                }
-//            }
+        // Calculated property for the total amount paid (using historical prices)
+        public decimal TotalAmount => _productos.Sum(p => p.Precio * p.Cantidad);
 
-//            OnPropertyChanged(nameof(TotalAmount));
-//        }
+        private void Productos_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+            {
+                foreach (Producto oldItem in e.OldItems)
+                {
+                    oldItem.PropertyChanged -= Producto_PropertyChanged;
+                }
+            }
 
-//        private void Producto_PropertyChanged(object? sender, PropertyChangedEventArgs e)
-//        {
-//            if (e.PropertyName == nameof(Producto.Precio) || e.PropertyName == nameof(Producto.Cantidad))
-//            {
-//                OnPropertyChanged(nameof(TotalAmount));
-//            }
-//        }
+            if (e.NewItems != null)
+            {
+                foreach (Producto newItem in e.NewItems)
+                {
+                    newItem.PropertyChanged += Producto_PropertyChanged;
+                }
+            }
 
-//        // Implementación de INotifyPropertyChanged
-//        public event PropertyChangedEventHandler? PropertyChanged;
-//        protected void OnPropertyChanged(string propertyName)
-//        {
-//            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-//        }
-//    }
+            OnPropertyChanged(nameof(TotalAmount));
+        }
 
-//    public class TicketFolio : IEquatable<TicketFolio>
-//    {
-//        public int Folio { get; set; }
-//        public string TicketDisplay => $"Ticket [{Folio}]";
+        private void Producto_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Producto.Precio) || e.PropertyName == nameof(Producto.Cantidad))
+            {
+                OnPropertyChanged(nameof(TotalAmount));
+            }
+        }
 
-//        public bool Equals(TicketFolio? other)
-//        {
-//            if (other == null) return false;
-//            return this.Folio == other.Folio;
-//        }
-
-//        public override bool Equals(object? obj)
-//        {
-//            return Equals(obj as TicketFolio);
-//        }
-
-//        public override int GetHashCode()
-//        {
-//            return Folio.GetHashCode();
-//        }
-//    }
-//}
-
-
-
+        // Implement INotifyPropertyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
