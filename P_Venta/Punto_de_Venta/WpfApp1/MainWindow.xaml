@@ -102,8 +102,8 @@
 
         <!-- DataGrid for Products -->
         <DataGrid Name="dGProductos" Margin="50,190,50,89" AutoGenerateColumns="False"
-          ItemsSource="{Binding Productos}" CellEditEnding="dGProductos_CellEditEnding" Grid.ColumnSpan="2"
-          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False" Height="320">
+          ItemsSource="{Binding Productos}" CellEditEnding="dGProductos_CellEditEnding" Grid.ColumnSpan="2" 
+          CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Height="320">
             <DataGrid.Columns>
                 <!-- Código del Producto -->
                 <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="*" IsReadOnly="True" />
@@ -155,7 +155,7 @@
           Width="141"
           Grid.ColumnSpan="2"
           ItemsSource="{Binding TicketFolios}"
-          SelectedItem="{Binding Selected_Folio, Mode=TwoWay}" />
+          SelectedItem="{Binding Selected_Folio, Mode=TwoWay}"/>
         <Label x:Name="LblTicketFolio"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

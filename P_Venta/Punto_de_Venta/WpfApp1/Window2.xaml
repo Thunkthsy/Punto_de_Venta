@@ -50,20 +50,52 @@
                Foreground="Red" Visibility="Collapsed"/>
 
         <!-- DataGrid -->
-        <DataGrid Name="dGProd_Search" Grid.Row="2" AutoGenerateColumns="False" Margin="0,10,0,0"
-                  MouseDoubleClick="dGProd_Search_MouseDoubleClick" ItemsSource="{Binding Productos}">
+        <DataGrid Name="dGProd_Search"
+          Grid.Row="2"
+          AutoGenerateColumns="False"
+          Margin="0,10,0,0"
+          ItemsSource="{Binding Productos}"
+          IsReadOnly="True"
+          CanUserAddRows="False"
+          CanUserDeleteRows="False"
+          SelectionMode="Single"
+          SelectionUnit="FullRow"
+          MouseDoubleClick="dGProd_Search_MouseDoubleClick">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="Auto"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
-                <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
-                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="Auto"/>
-                <DataGridTextColumn Header="Existencia" Binding="{Binding Existencia}" Width="Auto"/>
-                <DataGridTextColumn Header="Medida" Binding="{Binding Medida}" Width="Auto"/>
-                <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" Width="Auto"/>
+                <DataGridTextColumn Header="Código"
+                            Binding="{Binding Codigo}"
+                            Width="Auto"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nombre"
+                            Binding="{Binding Nombre}"
+                            Width="*"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Descripción"
+                            Binding="{Binding Descripcion}"
+                            Width="2*"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Precio"
+                            Binding="{Binding Precio}"
+                            Width="Auto"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Existencia"
+                            Binding="{Binding Existencia}"
+                            Width="Auto"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Medida"
+                            Binding="{Binding Medida}"
+                            Width="Auto"
+                            IsReadOnly="True"/>
+                <DataGridTextColumn Header="Departamento"
+                            Binding="{Binding Departamento}"
+                            Width="Auto"
+                            IsReadOnly="True"/>
                 <DataGridTemplateColumn Header="Acción" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Agregar" Click="Agregar_Click" DataContext="{Binding}"/>
+                            <Button Content="Agregar"
+                            Click="Agregar_Click"
+                            DataContext="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

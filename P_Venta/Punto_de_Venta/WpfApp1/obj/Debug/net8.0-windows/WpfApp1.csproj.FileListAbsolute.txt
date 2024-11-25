@@ -75,6 +75,7 @@ C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\bin\Debug\net8.0-windows\Database.pdb
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\bin\Debug\net8.0-windows\Models.pdb
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window1.baml
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window4.baml
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window1.g.cs
@@ -85,7 +86,6 @@ C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.cache
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.lref
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window1.baml
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window2.baml
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\Window3.baml
 C:\Users\ricar\OneDrive-Laureate Mexico\UNITEC\6 CUATRIMESTRE\23-11-2024\P_Venta\Punto_de_Venta\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.g.resources

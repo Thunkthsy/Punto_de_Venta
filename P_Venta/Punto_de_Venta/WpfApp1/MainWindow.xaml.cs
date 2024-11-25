@@ -600,6 +600,8 @@ namespace WpfApp1
             // Clear the DataGrid (product collection) after saving
             Productos.Clear(); // Clear the product list
 
+            GetOpenTicketFolios(); //Update folios collection
+
             // Update the total to zero after clearing the DataGrid
             UpdateTotal(); // Method that updates the total label
 

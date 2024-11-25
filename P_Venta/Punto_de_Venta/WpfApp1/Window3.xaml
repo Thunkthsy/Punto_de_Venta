@@ -4,7 +4,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         Title="Inventario" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dGProd_Stock" AutoGenerateColumns="False" Margin="0,60,0,0" ItemsSource="{Binding Productos}">
+        <DataGrid x:Name="dGProd_Stock"
+          AutoGenerateColumns="False"
+          Margin="0,60,0,0"
+          ItemsSource="{Binding Productos}"
+          IsReadOnly="True"
+          CanUserAddRows="False"
+          CanUserDeleteRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding Codigo}" Width="Auto"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>

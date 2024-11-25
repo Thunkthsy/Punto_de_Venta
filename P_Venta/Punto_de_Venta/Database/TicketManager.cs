@@ -358,26 +358,26 @@ namespace Database
                     {
                         try
                         {
-                            // Delete the existing ticket and its associated products
-                            string deleteTicketQuery = "DELETE FROM tickets WHERE ticket_folio = @folio";
+                            // Delete the existing products associated with the ticket
                             string deleteProductsQuery = "DELETE FROM p_vendidos WHERE ticket_folio = @folio";
-
-                            using (MySqlCommand deleteTicketCommand = new MySqlCommand(deleteTicketQuery, conexion, transaction))
-                            {
-                                deleteTicketCommand.Parameters.AddWithValue("@folio", ticket.Folio);
-                                await deleteTicketCommand.ExecuteNonQueryAsync();
-                            }
-
                             using (MySqlCommand deleteProductsCommand = new MySqlCommand(deleteProductsQuery, conexion, transaction))
                             {
                                 deleteProductsCommand.Parameters.AddWithValue("@folio", ticket.Folio);
                                 await deleteProductsCommand.ExecuteNonQueryAsync();
                             }
 
+                            // Now delete the ticket itself
+                            string deleteTicketQuery = "DELETE FROM tickets WHERE ticket_folio = @folio";
+                            using (MySqlCommand deleteTicketCommand = new MySqlCommand(deleteTicketQuery, conexion, transaction))
+                            {
+                                deleteTicketCommand.Parameters.AddWithValue("@folio", ticket.Folio);
+                                await deleteTicketCommand.ExecuteNonQueryAsync();
+                            }
+
                             // Insert the updated ticket details into the tickets table
                             string insertTicketQuery = @"
-                            INSERT INTO tickets (ticket_folio, estado, total_ticket, ticket_fecha) 
-                            VALUES (@folio, @estado, @total, @fecha)";
+                                INSERT INTO tickets (ticket_folio, estado, total_ticket, ticket_fecha) 
+                                VALUES (@folio, @estado, @total, @fecha)";
 
                             using (MySqlCommand ticketCommand = new MySqlCommand(insertTicketQuery, conexion, transaction))
                             {
@@ -391,8 +391,8 @@ namespace Database
 
                             // Insert each product in the Productos collection into the p_vendidos table
                             string insertProductQuery = @"
-                            INSERT INTO p_vendidos (ticket_folio, pv_code, pv_nombre, pv_precio, cantidad, pv_dept_id) 
-                            VALUES (@folio, @codigo, @nombre, @precio, @cantidad, @pv_dept_id)";
+                                INSERT INTO p_vendidos (ticket_folio, pv_code, pv_nombre, pv_precio, cantidad, pv_dept_id) 
+                                VALUES (@folio, @codigo, @nombre, @precio, @cantidad, @pv_dept_id)";
 
                             foreach (var producto in ticket.Productos)
                             {

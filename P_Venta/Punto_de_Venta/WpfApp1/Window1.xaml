@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Tickets Cerrados" Height="450" Width="800">
+    
     <Grid>
         <!-- Calendar for date selection -->
         <Calendar x:Name="calendar" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top"/>
@@ -18,6 +19,12 @@
                  SelectionChanged="ListBoxFolios_SelectionChanged"/>
 
         <!-- DataGrid to display products associated with the selected ticket -->
-        <DataGrid x:Name="dataGridProducts" ItemsSource="{Binding TicketProducts}" Margin="219,13,25,25" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="dataGridProducts" ItemsSource="{Binding TicketProducts}" Margin="219,13,25,25" 
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserSortColumns="False"
+                  IsHitTestVisible="False"/>
     </Grid>
 </Window>
