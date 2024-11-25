@@ -347,8 +347,8 @@ namespace Database
         // Ensures the database reflects the most current ticket and related product information.
         public static async Task UpdateTicketAsync(Ticket ticket)
         {
-            try
-            {
+           try
+           {
                 using (MySqlConnection conexion = DatabaseConnectionManager.GetConnection())
                 {
                     await conexion.OpenAsync();
@@ -438,12 +438,12 @@ namespace Database
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al actualizar el ticket: {ex.Message}");
-                throw new Exception("Se produjo un error al actualizar el ticket.", ex);
-            }
+           }
+           catch (Exception ex)
+           {
+              Console.WriteLine($"Error al actualizar el ticket: {ex.Message}");
+              throw new Exception("Se produjo un error al actualizar el ticket.", ex);
+           }
         }
     }
 }

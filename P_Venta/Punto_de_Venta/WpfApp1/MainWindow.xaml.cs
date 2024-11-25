@@ -428,7 +428,6 @@ namespace WpfApp1
                 MessageBox.Show("No hay productos en el ticket.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            GetOpenTicketFolios();//Extract existing ticket folios in Dtabase
 
             // Calculate the total of the products
             decimal total = Productos.Sum(p => p.Precio * p.Cantidad);
@@ -475,7 +474,8 @@ namespace WpfApp1
                     if (TicketFolios.Contains(Selected_Folio))
                     {
                         // Code to execute if Selected_Folio exists in TicketFolios 
-                        Console.WriteLine($"Folio {Selected_Folio} exists in the collection.");
+                        //Console.WriteLine($"Folio {Selected_Folio} exists in the collection.");
+                        //MessageBox.Show($"Folio {Selected_Folio} exists in the collection.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                         await TicketManager.UpdateTicketAsync(ticket);
                         MessageBox.Show("Ticket guardado exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
@@ -483,8 +483,8 @@ namespace WpfApp1
                     {   
                         // Code to execute if Selected_Folio does not exist in TicketFolios
                         await TicketManager.SaveTicketAsync(ticket);
-                        
-                        Console.WriteLine($"Folio {Selected_Folio} does not exist in the collection.");
+                        //MessageBox.Show($"Folio {Selected_Folio} does not exists in the collection.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                        //Console.WriteLine($"Folio {Selected_Folio} does not exist in the collection.");
                     }
                     
                 }
@@ -554,6 +554,7 @@ namespace WpfApp1
         // Saves the current ticket in the database and sets its status ("Estado") to 1
         private async void Button_Pendiente_Click(object sender, RoutedEventArgs e)
         {
+
             // Validate that there are products in the ticket
             if (!Productos.Any())
             {
@@ -580,15 +581,18 @@ namespace WpfApp1
                 if (TicketFolios.Contains(Selected_Folio))
                 {
                     // Code to execute if Selected_Folio exists in TicketFolios
-                    Console.WriteLine($"Folio {Selected_Folio} exists in the collection.");
+                    //Console.WriteLine($"Folio {Selected_Folio} exists in the collection.");
                     await TicketManager.UpdateTicketAsync(ticket);
+                   // MessageBox.Show($"Folio {Selected_Folio} exists in the collection.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                     MessageBox.Show("Ticket guardado exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 }
                 else
                 {
                     // Create a new Ticket if Selected_Folio does not exist in TicketFolios
                     await TicketManager.SaveTicketAsync(ticket);
-                    Console.WriteLine($"El folio {Selected_Folio} no existe en la colección.");
+                    //MessageBox.Show($"El folio {Selected_Folio} no existe en la colección.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //Console.WriteLine($"El folio {Selected_Folio} no existe en la colección.");
                 }
 
             }
