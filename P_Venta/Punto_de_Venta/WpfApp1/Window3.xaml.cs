@@ -90,5 +90,10 @@ namespace WpfApp1
                 lb_stock.Content = "Error: " + ex.Message;
             }
         }
+
+        private async void BtnAll_Click(object sender, RoutedEventArgs e)
+        {
+            await FillAllProductsAsync();
+        }
     }
 }

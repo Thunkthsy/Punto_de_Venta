@@ -54,7 +54,7 @@ namespace WpfApp1
                 // Check if a date is selected
                 if (!calendar.SelectedDate.HasValue)
                 {
-                    MessageBox.Show("Please select a date.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Por favor seleccione una fecha.", "Error de validación", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
@@ -72,7 +72,7 @@ namespace WpfApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error retrieving closed ticket folios: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al recuperar los folios de tickets cerrados: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -84,7 +84,7 @@ namespace WpfApp1
                 // Check if a ticket folio is selected
                 if (ticketFolio == 0)
                 {
-                    MessageBox.Show("Please select a ticket folio.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Por favor seleccione un folio de ticket.", "Error de validación", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
@@ -102,12 +102,12 @@ namespace WpfApp1
                 }
                 else
                 {
-                    MessageBox.Show("Ticket not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Boleto no encontrado.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading ticket details: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al cargar los detalles del boleto: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

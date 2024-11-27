@@ -129,6 +129,9 @@
                 <!-- Departamento -->
                 <DataGridTextColumn Header="Departamento" Binding="{Binding Departamento}" Width="*" IsReadOnly="True" />
 
+                <!-- Cantidad -->
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="*" IsReadOnly="True" />
+
                 <!-- Acción (Botón para quitar) -->
                 <DataGridTemplateColumn Header="Acción" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
